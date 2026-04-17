@@ -1,0 +1,1215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #fffff0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Floating Jasmine Petals */
+.jasmine-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.jasmine-petal {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #FFD700 40%, #FFF8DC 100%);
+    border-radius: 50% 0 50% 0;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+.jasmine-petal:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.jasmine-petal:nth-child(2) {
+    left: 30%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.jasmine-petal:nth-child(3) {
+    left: 50%;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+.jasmine-petal:nth-child(4) {
+    left: 70%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.jasmine-petal:nth-child(5) {
+    left: 90%;
+    animation-duration: 7s;
+    animation-delay: 3s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(139, 69, 19, 0.3), rgba(0, 0, 0, 0.4)),
+                url('https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.batik-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="batik" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,0 Q15,5 10,10 Q5,15 10,20 Q15,15 20,10 Q15,5 10,0" fill="none" stroke="%23FFD700" stroke-width="0.5" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23batik)"/></svg>') repeat;
+    opacity: 0.3;
+}
+
+.hero-ornament {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q80,25 90,50 Q80,75 50,90 Q20,75 10,50 Q20,25 50,10 Z" fill="none" stroke="%23FFD700" stroke-width="2" opacity="0.6"/><circle cx="50" cy="50" r="8" fill="%23FFD700" opacity="0.8"/></svg>') no-repeat center;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.hero-ornament.top-left {
+    top: 50px;
+    left: 50px;
+}
+
+.hero-ornament.top-right {
+    top: 50px;
+    right: 50px;
+    transform: rotate(90deg);
+}
+
+.hero-ornament.bottom-left {
+    bottom: 50px;
+    left: 50px;
+    transform: rotate(-90deg);
+}
+
+.hero-ornament.bottom-right {
+    bottom: 50px;
+    right: 50px;
+    transform: rotate(180deg);
+}
+
+@keyframes glow {
+    0% { filter: brightness(1) drop-shadow(0 0 5px #FFD700); }
+    100% { filter: brightness(1.2) drop-shadow(0 0 15px #FFD700); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.greeting h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.greeting p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #FFFFF0;
+    margin-bottom: 30px;
+}
+
+.couple-names h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+}
+
+.ampersand {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #FFFFF0;
+    margin: 0 20px;
+    opacity: 0.8;
+}
+
+.wedding-date p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #FFFFF0;
+}
+
+.wedding-date h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 40px;
+}
+
+.save-date-btn {
+    background: linear-gradient(45deg, #800000, #8B4513);
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+}
+
+.save-date-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.6);
+    background: linear-gradient(45deg, #8B0000, #A0522D);
+}
+
+/* Animation Classes */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.animate-fade-in-delay-2 {
+    animation: fadeIn 1s ease-out 1s both;
+}
+
+.animate-fade-in-delay-3 {
+    animation: fadeIn 1s ease-out 1.5s both;
+}
+
+.animate-slide-left {
+    animation: slideLeft 1s ease-out;
+}
+
+.animate-slide-right {
+    animation: slideRight 1s ease-out;
+}
+
+.animate-fade-up {
+    animation: fadeUp 1s ease-out;
+}
+
+.animate-fade-up-delay {
+    animation: fadeUp 1s ease-out 0.3s both;
+}
+
+.animate-zoom-in {
+    animation: zoomIn 0.8s ease-out;
+}
+
+.animate-zoom-in-delay {
+    animation: zoomIn 0.8s ease-out 0.2s both;
+}
+
+.animate-zoom-in-delay-2 {
+    animation: zoomIn 0.8s ease-out 0.4s both;
+}
+
+.animate-zoom-in-delay-3 {
+    animation: zoomIn 0.8s ease-out 0.6s both;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #8B4513;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #800000;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #8B4513;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.batik-divider {
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, #800000, #FFD700, #800000);
+    margin: 20px auto;
+    position: relative;
+}
+
+.batik-divider::before,
+.batik-divider::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #FFD700;
+    border-radius: 50%;
+    top: -4.5px;
+}
+
+.batik-divider::before {
+    left: -6px;
+}
+
+.batik-divider::after {
+    right: -6px;
+}
+
+/* Countdown Section */
+.countdown-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #8B4513 0%, #800000 100%);
+    color: white;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    min-width: 120px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.countdown-item label {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFFFF0;
+}
+
+/* Couple Section */
+.couple-section {
+    padding: 100px 0;
+    background: #FFFFF0;
+}
+
+.couple-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.couple-frame {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(139, 69, 19, 0.3);
+}
+
+.couple-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.couple-frame:hover img {
+    transform: scale(1.05);
+}
+
+.ornament-overlay {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 3px solid #FFD700;
+    border-radius: 20px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="ornament" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="%23FFD700" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23ornament)"/></svg>') repeat;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.couple-info {
+    text-align: center;
+    color: #8B4513;
+}
+
+.couple-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #800000;
+    margin-bottom: 15px;
+}
+
+.couple-info p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    line-height: 1.8;
+}
+
+.couple-info strong {
+    color: #8B4513;
+    font-weight: 600;
+}
+
+.javanese-quote {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 4px solid #FFD700;
+    border-radius: 5px;
+}
+
+.javanese-quote em {
+    font-style: italic;
+    color: #800000;
+    font-size: 0.9rem;
+}
+
+/* Events Section */
+.events-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FFFFF0 0%, #FFF8DC 100%);
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.event-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #800000, #FFD700, #800000);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(139, 69, 19, 0.25);
+}
+
+.event-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.event-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #800000;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.event-details p {
+    margin-bottom: 10px;
+    color: #8B4513;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.event-details strong {
+    color: #800000;
+    font-weight: 600;
+}
+
+.location-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #8B4513;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.location-btn:hover {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 100px 0;
+    background: #8B4513;
+    color: white;
+}
+
+.gallery-section .section-header h2,
+.gallery-section .section-header p {
+    color: white;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.photo-frame {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 4/5;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.photo-frame:hover img {
+    transform: scale(1.1);
+}
+
+.photo-frame:hover .photo-overlay {
+    transform: translateY(0);
+}
+
+.photo-overlay h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #FFD700;
+}
+
+/* RSVP Section */
+.rsvp-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FFFFF0 0%, #FFF8DC 100%);
+}
+
+.rsvp-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rsvp-form {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(139, 69, 19, 0.15);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #8B4513;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.rsvp-btn {
+    width: 100%;
+    background: linear-gradient(45deg, #800000, #8B4513);
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rsvp-btn:hover {
+    background: linear-gradient(45deg, #8B0000, #A0522D);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+}
+
+/* Footer */
+.footer-section {
+    background: #8B4513;
+    color: white;
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-ornament {
+    width: 80px;
+    height: 80px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q80,25 90,50 Q80,75 50,90 Q20,75 10,50 Q20,25 50,10 Z" fill="none" stroke="%23FFD700" stroke-width="2"/><path d="M50,25 Q65,35 70,50 Q65,65 50,75 Q35,65 30,50 Q35,35 50,25 Z" fill="%23FFD700" opacity="0.6"/></svg>') no-repeat center;
+    margin: 0 auto 20px;
+}
+
+.footer-section p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.footer-section p:first-of-type {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #FFD700;
+}
+
+.footer-divider {
+    width: 100px;
+    height: 2px;
+    background: #FFD700;
+    margin: 30px auto 20px;
+}
+
+.footer-section p:last-child {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .couple-names h1 {
+        font-size: 2.5rem;
+    }
+    
+    .ampersand {
+        font-size: 2rem;
+        margin: 0 10px;
+    }
+    
+    .wedding-date h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .couple-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .events-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .countdown-container {
+        gap: 20px;
+    }
+    
+    .countdown-item {
+        min-width: 100px;
+        padding: 20px 15px;
+    }
+    
+    .countdown-item span {
+        font-size: 2.2rem;
+    }
+    
+    .couple-frame {
+        width: 250px;
+        height: 320px;
+    }
+    
+    .hero-ornament {
+        display: none;
+    }
+    
+    .gallery-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .rsvp-form {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-names h1 {
+        font-size: 2rem;
+    }
+    
+    .wedding-date h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-item span {
+        font-size: 1.8rem;
+    }
+    
+    .couple-frame {
+        width: 200px;
+        height: 280px;
+    }
+    
+    .couple-info h3 {
+        font-size: 1.8rem;
+    }
+    
+    .event-card {
+        padding: 30px 20px;
+    }
+    
+    .event-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .rsvp-form {
+        padding: 30px 20px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Music Toggle Button */
+.music-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: linear-gradient(45deg, #800000, #8B4513);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.6);
+}
+
+.music-toggle.playing {
+    animation: pulse 2s infinite;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+}
+
+.music-toggle:not(.playing) {
+    background: linear-gradient(45deg, #800000, #8B4513);
+    opacity: 0.7;
+}
+
+.music-toggle:not(.playing):hover {
+    opacity: 1;
+    background: linear-gradient(45deg, #8B0000, #A0522D);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Location Section */
+.location-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FFFFF0 0%, #FFF8DC 100%);
+}
+
+.location-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.location-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(139, 69, 19, 0.15);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(139, 69, 19, 0.25);
+}
+
+.location-header {
+    background: linear-gradient(135deg, #800000, #8B4513);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.location-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.location-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.location-details {
+    padding: 30px;
+}
+
+.location-details h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #800000;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.location-details p {
+    margin-bottom: 10px;
+    color: #8B4513;
+    line-height: 1.8;
+}
+
+.location-details strong {
+    color: #800000;
+    font-weight: 600;
+}
+
+.location-map {
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.location-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.location-btn.primary {
+    background: linear-gradient(45deg, #800000, #8B4513);
+    color: white;
+    flex: 1;
+}
+
+.location-btn.secondary {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #8B4513;
+    flex: 1;
+}
+
+.location-btn.primary:hover {
+    background: linear-gradient(45deg, #8B0000, #A0522D);
+}
+
+.location-btn.secondary:hover {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+}
+
+/* Gift Section */
+.gift-section {
+    padding: 100px 0;
+    background: #8B4513;
+    color: white;
+}
+
+.gift-section .section-header h2,
+.gift-section .section-header p {
+    color: white;
+}
+
+.gift-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.gift-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.gift-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    border-color: #FFD700;
+}
+
+.bank-logo {
+    margin-bottom: 25px;
+}
+
+.bank-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.bank-logo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #800000;
+    margin: 0;
+    font-weight: 700;
+}
+
+.account-details {
+    color: #8B4513;
+}
+
+.account-number {
+    margin-bottom: 20px;
+}
+
+.account-number label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #800000;
+}
+
+.number-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F5F5F5;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #E0E0E0;
+}
+
+.number-display span {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #800000;
+    letter-spacing: 1px;
+}
+
+.copy-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    color: #8B4513;
+}
+
+.copy-btn:hover {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+    transform: scale(1.1);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.account-name {
+    padding-top: 15px;
+    border-top: 1px solid #E0E0E0;
+}
+
+.account-name label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #800000;
+}
+
+.account-name span {
+    font-weight: 600;
+    color: #8B4513;
+    font-size: 1.1rem;
+}
+
+.gift-message {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.gift-message p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #FFFFF0;
+    margin: 0;
+}
+
+.gift-message em {
+    color: #FFD700;
+    font-style: italic;
+}
+
+/* Responsive Updates */
+@media (max-width: 768px) {
+    .location-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .gift-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .location-buttons {
+        flex-direction: column;
+    }
+    
+    .music-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .number-display {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .number-display span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-details {
+        padding: 20px;
+    }
+    
+    .location-header {
+        padding: 20px;
+    }
+    
+    .location-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .gift-card {
+        padding: 20px;
+    }
+    
+    .bank-logo h3 {
+        font-size: 1.5rem;
+    }
+    
+    .gift-message {
+        padding: 20px;
+    }
+    
+    .gift-message p {
+        font-size: 1rem;
+    }
+}

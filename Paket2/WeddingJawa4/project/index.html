@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Arya & Sari</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="src/assets/musicjawa.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Music Control Button -->
+    <button id="musicToggle" class="music-toggle" onclick="toggleMusic()" title="Klik untuk memutar musik">
+        🔇
+    </button>
+    
+    <!-- Floating Jasmine Petals -->
+    <div class="jasmine-container">
+        <div class="jasmine-petal"></div>
+        <div class="jasmine-petal"></div>
+        <div class="jasmine-petal"></div>
+        <div class="jasmine-petal"></div>
+        <div class="jasmine-petal"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="batik-overlay"></div>
+        <div class="hero-ornament top-left"></div>
+        <div class="hero-ornament top-right"></div>
+        <div class="hero-ornament bottom-left"></div>
+        <div class="hero-ornament bottom-right"></div>
+        
+        <div class="hero-content">
+            <div class="greeting animate-fade-in">
+                <h3>بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h3>
+                <p>Sugeng Rawuh</p>
+            </div>
+            
+            <div class="couple-names animate-fade-in-delay">
+                <h1>Arya Wijaya</h1>
+                <div class="ampersand">&</div>
+                <h1>Sari Kusuma</h1>
+            </div>
+            
+            <div class="wedding-date animate-fade-in-delay-2">
+                <p>Kita akan melangsungkan pernikahan pada</p>
+                <h2>Selasa, 15 April 2026</h2>
+            </div>
+            
+            <button class="save-date-btn animate-fade-in-delay-3" onclick="saveDate()">
+                Simpan Tanggal
+            </button>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hitung Mundur Menuju Hari Bahagia</h2>
+                <div class="batik-divider"></div>
+            </div>
+            
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <label>Hari</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <label>Jam</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <label>Menit</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <label>Detik</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Couple Section -->
+    <section id="couple" class="couple-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tentang Mempelai</h2>
+                <div class="batik-divider"></div>
+                <p>Dua jiwa yang bersatu dalam ikatan suci pernikahan</p>
+            </div>
+            
+            <div class="couple-container">
+                <div class="groom-section animate-slide-left">
+                    <div class="couple-frame">
+                        <img src="src/assets/pria_jawa.jpg" alt="Mempelai Pria">
+                        <div class="ornament-overlay"></div>
+                    </div>
+                    <div class="couple-info">
+                        <h3>Arya Wijaya Kusuma</h3>
+                        <p>Putra pertama dari</p>
+                        <p><strong>Bapak Bambang Kusuma</strong></p>
+                        <p><strong>Ibu Siti Nurwati</strong></p>
+                        <div class="javanese-quote">
+                            <em>"Wong bagus iku sing soleh lan akhlak mulia"</em>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bride-section animate-slide-right">
+                    <div class="couple-frame">
+                        <img src="src/assets/wanita_jawa.jpg" alt="Mempelai Wanita">
+                        <div class="ornament-overlay"></div>
+                    </div>
+                    <div class="couple-info">
+                        <h3>Sari Kusuma Dewi</h3>
+                        <p>Putri kedua dari</p>
+                        <p><strong>Bapak Sutrisno Dewi</strong></p>
+                        <p><strong>Ibu Endang Susilowati</strong></p>
+                        <div class="javanese-quote">
+                            <em>"Wong ayu iku sing berbudi lan tresna marang kulawarga"</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Detail Acara Pernikahan</h2>
+                <div class="batik-divider"></div>
+                <p>Dengan segala kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i</p>
+            </div>
+            
+            <div class="events-container">
+                <div class="event-card animate-fade-up">
+                    <div class="event-icon">🕌</div>
+                    <h3>Akad Nikah</h3>
+                    <div class="event-details">
+                        <p><strong>Hari/Tanggal:</strong> Sabtu, 15 Juni 2024</p>
+                        <p><strong>Waktu:</strong> 08.00 - 09.30 WIB</p>
+                        <p><strong>Tempat:</strong> Masjid Agung Demak</p>
+                        <p><strong>Alamat:</strong> Jl. Sultan Fatah No.1, Bintoro, Demak</p>
+                    </div>
+                    <button class="location-btn" onclick="openMaps('Masjid Agung Demak, Demak')">
+                        Lihat Lokasi
+                    </button>
+                </div>
+                
+                <div class="event-card animate-fade-up-delay">
+                    <div class="event-icon">🏛️</div>
+                    <h3>Resepsi Pernikahan</h3>
+                    <div class="event-details">
+                        <p><strong>Hari/Tanggal:</strong> Sabtu, 15 Juni 2024</p>
+                        <p><strong>Waktu:</strong> 11.00 - 14.00 WIB</p>
+                        <p><strong>Tempat:</strong> Pendopo Agung Keraton</p>
+                        <p><strong>Alamat:</strong> Jl. Raya Keraton No.88, Yogyakarta</p>
+                    </div>
+                    <button class="location-btn" onclick="openMaps('Pendopo Agung Keraton, Yogyakarta')">
+                        Lihat Lokasi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Galeri Foto Mempelai</h2>
+                <div class="batik-divider"></div>
+                <p>Momen-momen indah perjalanan cinta kami</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-item animate-zoom-in">
+                    <div class="photo-frame">
+                        <img src="src/assets/jawa1.jpg" alt="Pre-wedding 1">
+                        <div class="photo-overlay">
+                            <h4>Lamaran</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-zoom-in-delay">
+                    <div class="photo-frame">
+                        <img src="src/assets/jawa2.jpg" alt="Pre-wedding 2">
+                        <div class="photo-overlay">
+                            <h4>Pre-Wedding</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-zoom-in-delay-2">
+                    <div class="photo-frame">
+                        <img src="src/assets/jawa3.jpg" alt="Pre-wedding 3">
+                        <div class="photo-overlay">
+                            <h4>Siraman</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-zoom-in-delay-3">
+                    <div class="photo-frame">
+                        <img src="src/assets/jawa4.jpg" alt="Pre-wedding 4">
+                        <div class="photo-overlay">
+                            <h4>Midodareni</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-zoom-in">
+                    <div class="photo-frame">
+                        <img src="src/assets/jawa_maroon1.jpg" alt="Traditional Ceremony 1">
+                        <div class="photo-overlay">
+                            <h4>Panggih</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-zoom-in-delay">
+                    <div class="photo-frame">
+                        <img src="src/assets/jawa_maroon2.jpg" alt="Traditional Ceremony 2">
+                        <div class="photo-overlay">
+                            <h4>Sungkeman</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lokasi Pernikahan</h2>
+                <div class="batik-divider"></div>
+                <p>Lokasi lengkap acara pernikahan kami</p>
+            </div>
+            
+            <div class="location-container">
+                <div class="location-card animate-fade-up">
+                    <div class="location-header">
+                        <div class="location-icon">🕌</div>
+                        <h3>Akad Nikah</h3>
+                    </div>
+                    <div class="location-details">
+                        <h4>Masjid Agung Demak</h4>
+                        <p><strong>Alamat:</strong> Jl. Sultan Fatah No.1, Bintoro, Demak, Jawa Tengah 59519</p>
+                        <p><strong>Waktu:</strong> Sabtu, 15 Juni 2024 - 08.00 WIB</p>
+                        <div class="location-map">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.234567890123!2d110.63456789!3d-6.87654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70c4c4c4c4c4c4%3A0x1234567890123456!2sMasjid%20Agung%20Demak!5e0!3m2!1sen!2sid!4v1234567890123" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0;border-radius:10px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="location-buttons">
+                            <button class="location-btn primary" onclick="openMaps('Masjid Agung Demak, Demak')">
+                                📍 Buka Maps
+                            </button>
+                            <button class="location-btn secondary" onclick="shareLocation('Masjid Agung Demak, Demak')">
+                                📤 Bagikan Lokasi
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-card animate-fade-up-delay">
+                    <div class="location-header">
+                        <div class="location-icon">🏛️</div>
+                        <h3>Resepsi Pernikahan</h3>
+                    </div>
+                    <div class="location-details">
+                        <h4>Pendopo Agung Keraton</h4>
+                        <p><strong>Alamat:</strong> Jl. Raya Keraton No.88, Yogyakarta, DIY 55133</p>
+                        <p><strong>Waktu:</strong> Sabtu, 15 Juni 2024 - 11.00 WIB</p>
+                        <div class="location-map">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.123456789012!2d110.12345678!3d-7.79123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787c4c4c4c4%3A0x9876543210987654!2sPendopo%20Agung%20Keraton!5e0!3m2!1sen!2sid!4v9876543210987" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0;border-radius:10px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="location-buttons">
+                            <button class="location-btn primary" onclick="openMaps('Pendopo Agung Keraton, Yogyakarta')">
+                                📍 Buka Maps
+                            </button>
+                            <button class="location-btn secondary" onclick="shareLocation('Pendopo Agung Keraton, Yogyakarta')">
+                                📤 Bagikan Lokasi
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Section -->
+    <section id="gift" class="gift-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Amplop Digital</h2>
+                <div class="batik-divider"></div>
+                <p>Tanpa mengurangi rasa hormat, bagi yang ingin memberikan tanda kasih dapat melalui:</p>
+            </div>
+            
+            <div class="gift-container">
+                <div class="gift-card animate-fade-up">
+                    <div class="bank-logo">
+                        <div class="bank-icon">🏦</div>
+                        <h3>Bank Mandiri</h3>
+                    </div>
+                    <div class="account-details">
+                        <div class="account-number">
+                            <label>No. Rekening:</label>
+                            <div class="number-display">
+                                <span id="mandiri-number">1234567890123456</span>
+                                <button class="copy-btn" onclick="copyToClipboard('1234567890123456', 'mandiri')">
+                                    📋
+                                </button>
+                            </div>
+                        </div>
+                        <div class="account-name">
+                            <label>Atas Nama:</label>
+                            <span>Arya Wijaya Kusuma</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gift-card animate-fade-up-delay">
+                    <div class="bank-logo">
+                        <div class="bank-icon">🏧</div>
+                        <h3>Bank BCA</h3>
+                    </div>
+                    <div class="account-details">
+                        <div class="account-number">
+                            <label>No. Rekening:</label>
+                            <div class="number-display">
+                                <span id="bca-number">9876543210</span>
+                                <button class="copy-btn" onclick="copyToClipboard('9876543210', 'bca')">
+                                    📋
+                                </button>
+                            </div>
+                        </div>
+                        <div class="account-name">
+                            <label>Atas Nama:</label>
+                            <span>Sari Kusuma Dewi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gift-card animate-fade-up">
+                    <div class="bank-logo">
+                        <div class="bank-icon">💳</div>
+                        <h3>Dana</h3>
+                    </div>
+                    <div class="account-details">
+                        <div class="account-number">
+                            <label>No. Dana:</label>
+                            <div class="number-display">
+                                <span id="dana-number">081234567890</span>
+                                <button class="copy-btn" onclick="copyToClipboard('081234567890', 'dana')">
+                                    📋
+                                </button>
+                            </div>
+                        </div>
+                        <div class="account-name">
+                            <label>Atas Nama:</label>
+                            <span>Arya Wijaya Kusuma</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gift-card animate-fade-up-delay">
+                    <div class="bank-logo">
+                        <div class="bank-icon">💰</div>
+                        <h3>GoPay</h3>
+                    </div>
+                    <div class="account-details">
+                        <div class="account-number">
+                            <label>No. GoPay:</label>
+                            <div class="number-display">
+                                <span id="gopay-number">081987654321</span>
+                                <button class="copy-btn" onclick="copyToClipboard('081987654321', 'gopay')">
+                                    📋
+                                </button>
+                            </div>
+                        </div>
+                        <div class="account-name">
+                            <label>Atas Nama:</label>
+                            <span>Sari Kusuma Dewi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gift-message animate-fade-up">
+                <p>🙏 <em>"Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan karunia yang sangat berarti bagi kami."</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Konfirmasi Kehadiran</h2>
+                <div class="batik-divider"></div>
+                <p>Mohon konfirmasi kehadiran Bapak/Ibu/Saudara/i</p>
+            </div>
+            
+            <div class="rsvp-container">
+                <form class="rsvp-form animate-fade-up" id="rsvpForm">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="jumlah">Jumlah Tamu</label>
+                        <select id="jumlah" name="jumlah" required>
+                            <option value="">Pilih jumlah tamu</option>
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                            <option value="3">3 Orang</option>
+                            <option value="4">4 Orang</option>
+                            <option value="5+">5+ Orang</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pesan">Pesan & Doa</label>
+                        <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan pesan dan doa untuk mempelai..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="rsvp-btn">
+                        Kirim Konfirmasi
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-ornament"></div>
+            <p>Dibuat kanthi katresnan 💕</p>
+            <p>Mugi tansah pinaringan rahayu</p>
+            <div class="footer-divider"></div>
+            <p>&copy; 2026 Arya & Sari Wedding</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "wedding-digital-invitation",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Premium Digital Wedding Invitation - Business Portfolio Template",
+  "keywords": ["wedding", "invitation", "digital", "responsive", "portfolio", "business"],
+  "author": "Wedding Digital Services",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "serve": "vite preview --host --port 3000"
+  },
+  "devDependencies": {
+    "vite": "^5.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/wedding-digital-invitation"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/wedding-digital-invitation/issues"
+  },
+  "homepage": "https://your-username.github.io/wedding-digital-invitation"
+}
